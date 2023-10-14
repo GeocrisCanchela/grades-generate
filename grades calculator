@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grades and Average Calculator</title>
+</head>
+<body>
+    <h1>Grades and Average Calculator</h1>
+    <form method="post">
+        <label for="subject1">Subject 1:</label>
+        <input type="number" name="subject1" id="subject1" required><br><br>
+
+        <label for="subject2">Subject 2:</label>
+        <input type="number" name="subject2" id="subject2" required><br><br>
+
+        <label for="subject3">Subject 3:</label>
+        <input type="number" name="subject3" id="subject3" required><br><br>
+
+        <input type="submit" name="calculate" value="Calculate">
+    </form>
+
+    <?php
+    if (isset($_POST['calculate'])) {
+        // Retrieve grades from the form
+        $subject1 = $_POST['subject1'];
+        $subject2 = $_POST['subject2'];
+        $subject3 = $_POST['subject3'];
+
+        // Calculate the average
+        $average = ($subject1 + $subject2 + $subject3) / 3;
+
+        // Display the individual grades and the average
+        echo "<h2>Grades:</h2>";
+        echo "Subject 1: $subject1<br>";
+        echo "Subject 2: $subject2<br>";
+        echo "Subject 3: $subject3<br><br>";
+        echo "<h2>Average:</h2>";
+        echo "Average Grade: $average";
+    }
+    ?>
+</body>
+</html>
